@@ -1,0 +1,23 @@
+## 셀레니움 버전이 3세대에서 4세대로 업데이트 되면서 명령어 일부의 사용법이 바뀜
+
+기존 : driver = webdriver.Chrome(r'chromedriver.exe')
+변경 : driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
+
+기존 : driver.find_element_by_xpath('xpath 주소')
+변경 : id_input = driver.find_element(by = By.XPATH, value = 'xpath 주소')
+
+## 위의 문법을 사용하기 위해서는 아래의 라이브러리들을 import 해줘야함
+
+from selenium import webdriver
+import time
+
+from selenium.common.exceptions imports NoSuchElementException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+
+## 업뎃 관련 블로그 내용
+https://bskyvision.com/entry/python-selenium-%ED%81%AC%EB%A1%A4%EB%A7%81-findelementbycssselector-%EB%8D%94-%EC%9D%B4%EC%83%81-%EC%82%AC%EC%9A%A9-%EB%B6%88%EA%B0%80
+
+
